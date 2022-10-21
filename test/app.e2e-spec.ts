@@ -21,4 +21,8 @@ describe('AppController (e2e)', () => {
       .expect(200)
       .expect('Hello World!');
   });
+
+  it('all posts are able to get retrieved from the endpoint (GET)', () => {
+    return request(app.getHttpServer()).get('/blog/posts').expect(200);
+  });
 });
