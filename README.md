@@ -16,6 +16,7 @@ The purpose of this application was to adventure into a new language, Node.js fr
 
 ## Future Additions
 
+- Implement tests for each endpoint
 - Frontend using React, Typescript and AUTH0 SPA to interact with this API
 
 ## Methods
