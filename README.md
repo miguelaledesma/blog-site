@@ -39,102 +39,110 @@ The purpose of this application was to adventure into a new language, Node.js fr
 | `/blog/delete/?postID=` | delete an existing post by querying a specific ID (Authentication Required). |
 
 ## Request Body for new post
-
+```
 {
-"title": "String",
-"description": "String",
-"body": "String",
-"author": "String",
-"date_posted": "String"
+  "title": "String",
+  "description": "String is updated",
+  "body": "Hello this is edited",
+  "author": "Miguel",
+  "date_posted": "10-19-2022"
 }
 
+```
 ## Samples
 
 `GET /blog/posts`
 
 **Response:**
+```
 [
-{
-"\_id": "63507233cf6c4eca9933bf06",
-"title": "String",
-"description": "String",
-"body": "String",
-"author": "String",
-"date_posted": "String",
-"**v": 0
-},
-{
-"\_id": "6350939a39229f0076f0312d",
-"title": "Hellooooooo World",
-"description": "String",
-"body": "Body must be a String",
-"author": "String",
-"date_posted": "String",
-"**v": 0
-},
-{
-"\_id": "6350bc9c61a7c0e172c049da",
-"title": "Hellooooooo Wordld",
-"description": "String",
-"body": "Body of the Blog",
-"author": "String",
-"date_posted": "String",
-"\*\*v": 0
-}
+    {
+        "_id": "63507233cf6c4eca9933bf06",
+        "title": "String",
+        "description": "String",
+        "body": "String",
+        "author": "String",
+        "date_posted": "String",
+        "__v": 0
+    },
+    {
+        "_id": "63508b5800e69a1d5b750d4d",
+        "title": "Blog 2",
+        "description": "Here is Blog 2",
+        "body": "Hello this is Blog 2",
+        "author": "Me",
+        "date_posted": "String",
+        "__v": 0
+    },
+  
 ]
+
+```
 
 `POST /blog/post`
 
+```
 {
-"message": "Post has been submitted successfully",
-"post": {
-"title": "String",
-"description": "String",
-"body": "String",
-"author": "String",
-"date_posted": "String",
-"\_id": "6351f02c515cc9d076e20e17",
-"\_\_v": 0
+    "message": "Post has been submitted successfully",
+    "post": {
+        "title": "String",
+        "description": "String",
+        "body": "String",
+        "author": "String",
+        "date_posted": "String",
+        "_id": "6351f02c515cc9d076e20e17",
+        "__v": 0
+    }
 }
-}
+```
+
 
 `PUT blog/edit?postID=`
 
+```
 {
-"message": "Post has been successfully edited",
-"post": {
-"\_id": "6351f02c515cc9d076e20e17",
-"title": "String",
-"description": "String is updated",
-"body": "Hello this is edited",
-"author": "Miguel",
-"date_posted": "10-19-2022",
-"\_\_v": 0
-}
-}
+   "message":"Post has been successfully edited",
+   "post":{
+      "\\_id":"6351f02c515cc9d076e20e17",
+      "title":"String",
+      "description":"String is updated",
+      "body":"Hello this is edited",
+      "author":"Miguel",
+      "date_posted":"10-19-2022",
+      "\\_\\_v":0
+   }
+```
+
 
 `DELETE blog/delete?postID=`
 
+```
 {
-"message": "Post has been deleted!",
-"post": {
-"\_id": "6351f02c515cc9d076e20e17",
-"title": "String",
-"description": "String is updated",
-"body": "Hello this is edited",
-"author": "Miguel",
-"date_posted": "10-19-2022",
-"\_\_v": 0
-}
+   "message":"Post has been deleted!",
+   "post":{
+      "\\_id":"6351f02c515cc9d076e20e17",
+      "title":"String",
+      "description":"String is updated",
+      "body":"Hello this is edited",
+      "author":"Miguel",
+      "date_posted":"10-19-2022",
+      "\\_\\_v":0
+   }
 }
 
+```
+
+
 **No Auth Errors**
+```
 {
 "message": "No authorization token was found"
 }
-
+```
 OR
 
+```
 {
 "message": "jwt expired"
 }
+```
